@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class ArticleController extends Controller
 {
     function index(){
         echo "Selamat Datang";
@@ -17,6 +17,4 @@ class HomeController extends Controller
     function articles($id){
         echo "Halaman Artikel dengan ID $id";
     }
-
-
 }
