@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class AboutController extends Controller
 {
-    function index(){
+        function index(){
         echo "Selamat Datang";
     }
 
