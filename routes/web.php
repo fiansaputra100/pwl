@@ -11,6 +11,10 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProgramController;
 use Illuminate\Foundation\Console\AboutCommand;
 use App\Http\Controllers\ContactUsController;
+use App\Http\Controllers\ArtikelModelController;
+use App\Http\Controllers\HobiController;
+use App\Http\Controllers\KeluargaController;
+use App\Http\Controllers\MatakuliahController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,8 +30,10 @@ use App\Http\Controllers\ContactUsController;
 
 
 //1
+Route::get('/hobi', [HobiController::class, 'index']);
+Route::get('/keluarga', [KeluargaController::class, 'index']);
+Route::get('/matakuliah', [MatakuliahController::class, 'index']);
 Route::get('/', [HomeController::class, 'index']);
-
 
 
 
