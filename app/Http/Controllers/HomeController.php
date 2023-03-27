@@ -6,17 +6,10 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+
+
     function index(){
-        echo "Selamat Datang";
+        return view ('layout.pengalamanKuliah');
     }
-
-    function about(){
-        echo "Nama: Fian Rifky Saputra <br> NIM: 2141720029";
-    }
-
-    function articles($id){
-        echo "Halaman Artikel dengan ID $id";
-    }
-
 
 }
