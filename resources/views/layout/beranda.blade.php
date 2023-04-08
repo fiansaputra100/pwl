@@ -1,5 +1,6 @@
   
-
+  @extends('layout.template')
+  @section('content')
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -52,4 +53,6 @@
       alert('selamat datang')
     </script>
   </div>
-
+  @endsection
+  @push('custom_js')
+    @endpush

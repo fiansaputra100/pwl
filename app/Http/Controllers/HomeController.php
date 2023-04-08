@@ -9,7 +9,7 @@ class HomeController extends Controller
 
 
     function index(){
-        return view ('layout.beranda');
+        return view ('layout.sidebar');
     }
 
 }
