@@ -1,7 +1,6 @@
-  
-  @extends('layout.template')
-  @section('content')
-  <div class="content-wrapper">
+@extends('layouts.template')
+@section('content')
+<div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
@@ -49,10 +48,25 @@
 
     </section>
     <!-- /.content -->
-    <script>
-      alert('selamat datang')
-    </script>
   </div>
-  @endsection
-  @push('custom_js')
-    @endpush
+@endsection
+
+@push('custom_css')
+    <style>
+        .card {
+            background: green;
+            color: white;
+            transition: 0.5s;
+        }
+
+        .card:hover {
+            transform: scale(1.01);
+        }
+    </style>
+@endpush
+
+@push('custom_js')
+    <script>
+        alert('Selamat Datang');
+    </script>
+@endpush

@@ -4,10 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-
 use Illuminate\Support\Facades\DB;
-
-class HobiSeeder extends Seeder
+class LoginSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,13 +14,13 @@ class HobiSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('hobi')->insert([
+        DB::table('logins')->insert([
             [
-                'Kode' => 'B001',
-                'nama' => 'Fian Rifky Saputra',
-                'nama_hobi' => 'Bermain Voli',
-                'kriteria' => 'Olahraga'
-            ]  
-            ]);
+                'no_login' => '111',
+                'username' => 'fian',
+                'password' => 'fian123',
+            ],
+         
+        ]); 
     }
 }

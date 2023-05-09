@@ -13,11 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('hobi', function (Blueprint $table) {
-            $table->string('kode_no',10) ->primary();
-            $table->string('nama',30);
-            $table->string('nama_hobi');
-            $table->string('kriteria_hobi',30);
+        Schema::create('logins', function (Blueprint $table) {
+            $table->string('no_login',16) ->primary();
+            $table->string('Username',50);
+            $table->string('Password',30);
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('hobis');
+        Schema::dropIfExists('logins');
     }
 };

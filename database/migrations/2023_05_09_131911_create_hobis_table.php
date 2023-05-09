@@ -13,13 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('matakuliah', function (Blueprint $table) {
-            $table->string('Kode_MK',16) ->primary();
-            $table->string('nama_matakuliah',50);
-            $table->string('hari',30);
-            $table->string('nama_dosen',50);
+        Schema::create('hobi', function (Blueprint $table) {
+            $table->id();
+            $table->string('Kode',30)->unique();
+            $table->string('nama',30)->nullable();
+            $table->string('nama_hobi',30)->nullable();
+            $table->string('kriteria',30)->nullable();
             $table->timestamps();
         });
+
     }
 
     /**
@@ -29,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('matakuliahs');
+        Schema::dropIfExists('hobi');
     }
 };
