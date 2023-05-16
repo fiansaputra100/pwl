@@ -62,7 +62,7 @@ Route::middleware(['auth'])->group(function(){
 
     Route::get('/articles/{id}', [ArticleController::class, 'index']);
 
-    //Jobsheet 3 Prak 2
+    //jobshet 3 praktikum 2
 
     Route::get('/dashboard', [DashboardController::class, 'index']);
 
@@ -70,11 +70,11 @@ Route::middleware(['auth'])->group(function(){
 
     Route::get('/kuliah', [KuliahController::class, 'index']);
 
-    //Prak 4
+    //Praktikum 4 
 
     Route::get('/artikel', [ArtikelModelController::class, 'index']);
 
-    //Prak 4 Tugas
+    //praktikum 4 tugas
 
     // Route::get('/hobi', [HobiModelController::class, 'index']);
 
@@ -82,16 +82,19 @@ Route::middleware(['auth'])->group(function(){
 
     // Route::get('/matkul', [MatkulModelController::class, 'index']);
 
-    //Pert 7
+    //Praktikum 7
 
     Route::resource('/mahasiswa', MahasiswaController::class);
 
-    //Pert 7 Tugas
+    //Praktikum 7 tugas
 
     Route::resource('/hobi', HobiModelController::class);
 
     Route::resource('/keluarga', KeluargaModelController::class);
 
     Route::resource('/matkul', MatkulModelController::class);
+
+    //Latihan praktikum 9 membuat relasi many to many
+    Route::get('mahasiswa/{id}/khs', [MahasiswaController::class, 'showKhs']);
     
 });

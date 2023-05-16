@@ -6,6 +6,8 @@ use App\Models\Mahasiswa;
 use App\Models\MahasiswaModel;
 use Illuminate\Http\Request;
 use App\Models\Kelas;
+use App\Models\MataKuliah;
+use Database\Seeders\MatakuliahSeeder;
 
 class MahasiswaController extends Controller
 {
@@ -70,7 +72,9 @@ class MahasiswaController extends Controller
         $kelas = new Kelas;
         $kelas->id = $request->get('kelas');
 
+       
         $mahasiswa->kelas()->associate($kelas);
+
         $mahasiswa->save();
         
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
@@ -89,6 +93,15 @@ class MahasiswaController extends Controller
         //
     }
 
+    public function showKhs(MahasiswaModel $mahasiswa, $id){
+        $mahasiswa = MahasiswaModel::with('kelas', 'matakuliah')->find($id);
+        $khs = $mahasiswa->matakuliah()->withPivot('nilai')->get();
+        return view('mahasiswa.khs', [
+            'mahasiswa' => $mahasiswa,
+            'khs' => $khs
+        ]);
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -104,6 +117,8 @@ class MahasiswaController extends Controller
             'kelas' => $kelas,
             'url_form' => url('/mahasiswa/' . $id)
         ]);
+
+
     }
 
     /**
@@ -138,7 +153,10 @@ class MahasiswaController extends Controller
         $kelas = new Kelas;
         $kelas->id = $request->get('kelas');
 
+      
+
         $mahasiswa->kelas()->associate($kelas);
+
         $mahasiswa->save();
 
         return redirect('mahasiswa')->with('success', 'Mahasiswa Berhasil Diedit');
