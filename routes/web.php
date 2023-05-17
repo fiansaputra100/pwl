@@ -97,7 +97,11 @@ Route::middleware(['auth'])->group(function(){
     //Latihan praktikum 9 membuat relasi many to many
     Route::get('mahasiswa/{id}/khs', [MahasiswaController::class, 'showKhs']);
 
-    //Pertemuan 10 praktikum
+    //Pertemuan 10 praktikum 
     Route::resource('articles', ArticleController::class);
+   
     
+    //Pertemuan 10 praktikum 3
+    Route::get('/article/cetak_pdf', [ArticleController::class, 'cetak_pdf']);
+
 });
