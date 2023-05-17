@@ -60,7 +60,7 @@ Route::middleware(['auth'])->group(function(){
 
     Route::get('/about', [AboutController::class, 'index']);
 
-    Route::get('/articles/{id}', [ArticleController::class, 'index']);
+   // Route::get('/articles/{id}', [ArticleController::class, 'index']);
 
     //jobshet 3 praktikum 2
 
@@ -72,7 +72,7 @@ Route::middleware(['auth'])->group(function(){
 
     //Praktikum 4 
 
-    Route::get('/artikel', [ArtikelModelController::class, 'index']);
+   // Route::get('/artikel', [ArtikelModelController::class, 'index']);
 
     //praktikum 4 tugas
 
@@ -96,5 +96,8 @@ Route::middleware(['auth'])->group(function(){
 
     //Latihan praktikum 9 membuat relasi many to many
     Route::get('mahasiswa/{id}/khs', [MahasiswaController::class, 'showKhs']);
+
+    //Pertemuan 10 praktikum
+    Route::resource('articles', ArticleController::class);
     
 });
