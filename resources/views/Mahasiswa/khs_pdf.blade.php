@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <title>Kartu Hasil Studi | </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Document</title>
 </head>
 <body>
-    <div class="container mt-3">
-        <h1 class="text-center mb-5">Kartu Hasil Studi (KHS)</h1>
+    <div class="container">
+        <h2 class="text-center">JURUSAN TEKNOLOGI INFORMASI-POLITEKNIK NEGERI MALANG</h2>
+        <h1 class="text-center p-4">KARTU HASIL STUDI (KHS)</h1>
         <h6><b>Nama: </b>{{ $mahasiswa->nama }}</h6>
         <h6><b>Nim: </b>{{ $mahasiswa->nim }}</h6>
         <h6><b>Kelas: </b>{{ $mahasiswa->kelas->nama_kelas }}</h6>
-        <table class="table mt-5">
+        <table class="table">
             <thead>
                 <td><b>Mata Kuliah</b></td>
                 <td><b>SKS</b></td>
@@ -29,7 +30,6 @@
             </tr>
             @endforeach
         </table>
-        <a href="/mahasiswa" class="btn btn-success">Kembali</a>
-        <a href="/mahasiswa/{{$mahasiswa->id}}/cetak_pdf" class="btn btn-warning">Cetak</a>
     </div>
+</body>
 </html>

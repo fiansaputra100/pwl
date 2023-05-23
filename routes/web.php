@@ -104,4 +104,7 @@ Route::middleware(['auth'])->group(function(){
     //Pertemuan 10 praktikum 3
     Route::get('/article/cetak_pdf', [ArticleController::class, 'cetak_pdf']);
 
+     //Pertemuan 10 Tugas
+    Route::get('mahasiswa/{id}/cetak_pdf', [MahasiswaController::class, 'cetak_pdf']);
+
 });
