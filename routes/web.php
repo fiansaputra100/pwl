@@ -108,3 +108,6 @@ Route::middleware(['auth'])->group(function(){
     Route::get('mahasiswa/{id}/cetak_pdf', [MahasiswaController::class, 'cetak_pdf']);
 
 });
+
+    //Pertemuan 12 AJAX
+    Route::post('/mahasiswa/data', [MahasiswaController::class, 'data']);
